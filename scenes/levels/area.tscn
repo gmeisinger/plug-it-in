@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/cord/cord.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 155, 10 )
+
+[node name="area" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 468.195, 298.575 )
+
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2( 0, 271 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2( 469, 168 )
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="platform"]
+polygon = PoolVector2Array( 313.41, 157.088, 624.002, 158.11, 624.683, 177.862, 314.431, 177.522 )
+
+[node name="cord" parent="." instance=ExtResource( 2 )]
+position = Vector2( 254.558, 291.513 )
+rotation = -1.90241
+length = 19
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 431.689, 344.381 )
+current = true
+zoom = Vector2( 0.6, 0.6 )
