@@ -31,3 +31,19 @@ length = 19
 position = Vector2( 431.689, 344.381 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
+
+[node name="rope_broke" type="Label" parent="."]
+margin_left = 185.389
+margin_top = 252.983
+margin_right = 310.389
+margin_bottom = 266.983
+text = "Rope is not working :("
+
+[node name="controls" type="Label" parent="."]
+margin_left = 557.006
+margin_top = 294.704
+margin_right = 694.006
+margin_bottom = 324.704
+text = "Emotes:
+Press F to fail
+Press R to die"

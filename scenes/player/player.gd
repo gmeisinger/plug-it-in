@@ -1,26 +1,34 @@
 extends KinematicBody2D
 
 var velocity : Vector2
-var MAX_WALK_SPEED = 5.0
-var FRICTION = 15.0
+var walk_speed = 50.0
+var max_walk_speed = 300.0
+var jump_speed = 450
+var FRICTION = 700.0
+var floor_normal = Vector2.UP
+var gravity_vector = Vector2(0, 900)
+var slope_slide_stop = 25.0
 
 # Movement
-func process_movement(delta):
+func process_horizontal_movement(delta):
 	#check input and set velocity
 	var target_velocity = 0.0
 	if Input.is_action_pressed("move_left"):
-		target_velocity -= MAX_WALK_SPEED
+		target_velocity -= walk_speed
 		$Sprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
-		target_velocity += MAX_WALK_SPEED
+		target_velocity += walk_speed
 		$Sprite.flip_h = false
 	velocity.x += target_velocity
-	if abs(velocity.x) > MAX_WALK_SPEED:
-		velocity.x = sign(velocity.x) * MAX_WALK_SPEED
+	if abs(velocity.x) > max_walk_speed:
+		velocity.x = sign(velocity.x) * max_walk_speed
 
-func process_move_and_collide(delta):
-	var collision_data = move_and_collide(velocity)
-	return collision_data
+func process_move_and_slide(delta):
+	velocity += delta * gravity_vector
+	velocity = move_and_slide(velocity, floor_normal, slope_slide_stop)
+
+func jump():
+	velocity.y -= jump_speed
 
 func apply_friction(delta):
 	var new_speed = abs(velocity.x) - (FRICTION * delta)
