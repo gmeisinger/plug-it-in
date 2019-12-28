@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseLevel",
+"language": "GDScript",
+"path": "res://scenes/levels/Scripts/BaseLevel.gd"
+}, {
+"base": "Node2D",
+"class": "BaseSubLevel",
+"language": "GDScript",
+"path": "res://scenes/levels/Scripts/BaseSubLevel.gd"
+}, {
+"base": "Resource",
+"class": "PlayerData",
+"language": "GDScript",
+"path": "res://scenes/player/PlayerData.gd"
+} ]
 _global_script_class_icons={
-
+"BaseLevel": "",
+"BaseSubLevel": "",
+"PlayerData": ""
 }
 
 [application]
@@ -24,6 +41,11 @@ config/icon="res://icon.png"
 window/size/height=576
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[autoload]
+
+Globals="*res://Globals.gd"
+SaveSystem="*res://SaveSystem.gd"
 
 [input]
 

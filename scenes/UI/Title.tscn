@@ -1,0 +1,67 @@
+[gd_scene format=2]
+
+[node name="Title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1.01804, 0.0226212 )
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+alignment = 1
+
+[node name="Title" type="Label" parent="VBox"]
+margin_left = 474.0
+margin_top = 233.0
+margin_right = 549.0
+margin_bottom = 247.0
+size_flags_horizontal = 4
+text = "Title Screen"
+align = 1
+valign = 1
+
+[node name="Continue" type="Button" parent="VBox"]
+margin_left = 477.0
+margin_top = 251.0
+margin_right = 546.0
+margin_bottom = 271.0
+size_flags_horizontal = 4
+text = "Continue"
+
+[node name="New Game" type="Button" parent="VBox"]
+margin_left = 471.0
+margin_top = 275.0
+margin_right = 553.0
+margin_bottom = 295.0
+size_flags_horizontal = 4
+text = "New Game"
+
+[node name="Options" type="Button" parent="VBox"]
+margin_left = 480.0
+margin_top = 299.0
+margin_right = 543.0
+margin_bottom = 319.0
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="Credits" type="Button" parent="VBox"]
+margin_left = 483.0
+margin_top = 323.0
+margin_right = 540.0
+margin_bottom = 343.0
+size_flags_horizontal = 4
+text = "Credits"
+
+[node name="Quit" type="Button" parent="VBox"]
+margin_left = 492.0
+margin_top = 347.0
+margin_right = 532.0
+margin_bottom = 367.0
+size_flags_horizontal = 4
+text = "Quit"
