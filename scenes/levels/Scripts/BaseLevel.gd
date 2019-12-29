@@ -11,11 +11,11 @@ export(int) var level_index
 
 func set_level_complete():
 	SaveSystem.data.levels[level_index] = true
-	SaveSystem.data.last_level = level_name
+	SaveSystem.data.last_level = name
 
 func _exit_tree():
 	_on_leave_level()
 
 func _on_leave_level():
-	SaveSystem.data.last_level = level_name
+	SaveSystem.data.last_level = name
 	SaveSystem.save()

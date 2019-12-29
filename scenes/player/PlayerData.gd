@@ -8,14 +8,14 @@ class_name PlayerData
 # NOTE: Have to use export to serialize variables
 export(String) var last_level
 export(Vector2) var last_pos
-export(Array, bool) var levels = [false, false, false]
+export(Array, bool) var levels = [false, false, false, false, false]
 export(Array, bool) var sublevels = [false, false, false]
 export(int) var health
 
-## pretty sure _init has to exist to save/load resource to/from disk
+## all attr must exist in _init args to save/load resource to/from disk
 func _init(i_last_level="",
 			i_last_pos=Vector2(),
-			i_levels = [false, false, false],
+			i_levels = [false, false, false, false, false],
 			i_sublevels = [false, false, false],
 			i_health = 100
 			):

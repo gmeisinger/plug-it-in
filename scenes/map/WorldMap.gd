@@ -8,6 +8,8 @@ extends Node
 # Area is in WorldMapPath. The collider for level dialog pop up is in levels.
 
 func _enter_tree():
+	# selecting save game at title sets SaveSystem.data_index
+	# load that data now
 	SaveSystem.load_data()
 	set_levels_completed()
 
@@ -15,11 +17,10 @@ func set_levels_completed():
 	var levels = get_node('Levels').get_children()
 	var i: int = 0
 	for lvl in levels:
-		lvl.complete = SaveSystem.data.levels[i]
+		var missing_dependencies = false
+		for i in lvl.level_dependencies:
+			if not SaveSystem.data.levels[i]:
+				missing_dependencies = true
+				break
+		lvl.locked = missing_dependencies
 		i += 1
-
-func _exit_tree():
-	on_quit_save_data()
-
-func on_quit_save_data():
-	SaveSystem.save_data()

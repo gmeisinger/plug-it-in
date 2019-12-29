@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scenes/Map/WorldMap.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Map/MapLevel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Map/LevelDialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/map/WorldMap.gd" type="Script" id=1]
+[ext_resource path="res://scenes/map/MapLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/map/LevelDialog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://guy.png" type="Texture" id=4]
 
 [sub_resource type="Curve2D" id=1]
@@ -32,18 +32,20 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Notes" type="Label" parent="."]
-margin_right = 627.0
-margin_bottom = 48.0
-text = "NOTES:
-Could be clickable or you walkthrough it (super mario world style)
-Each 'level' will be a ui pop up. Could pop up above the level. Dynamic to the location on the map.
+margin_right = 875.0
+margin_bottom = 150.0
+text = "These are basically gates you unlock by progressing through the game.
+The levels, signified by the icons, will have crosses or fog over them if you haven't unlocked them.
+When the player collides with the level they are offered a pop up.
+'walk away pops down the ui
 
-Going to replace this follow path with a physics based implementation.
-These are basically gates you unlock by progressing through the game.
+NOTES: PlayerData is saved in tscn format. You can edit this by going to ~/.local/share/godot/app_userdata/<project name>.
+Go there and set the the first bool of levels array to true to unlock level2, and 3.
+Level 4 requires level 2 and 3 (index 1,2) to be true in the list.
 
-Right now save data is saved in tscn format. So you can edit this by going to ~/.local/share/godot/app_data/<project name>.
+See the Map_Levels for setting level dependencies
 
-"
+TODO: replace the follow path with a physics or code based movement implementation."
 
 [node name="SpriteMap" type="Sprite" parent="."]
 
@@ -51,12 +53,32 @@ Right now save data is saved in tscn format. So you can edit this by going to ~/
 
 [node name="Map_Level" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 468.996, 441.985 )
+level_path = "res://scenes/levels/Level1.tscn"
+level_dependencies = [  ]
 
 [node name="Map_Level2" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 532.838, 360.954 )
+level_name = "Level2"
+level_path = "res://scenes/levels/Level2.tscn"
+level_dependencies = [ 0 ]
 
 [node name="Map_Level3" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 591.769, 283.607 )
+level_name = "Level3"
+level_path = "res://scenes/levels/Level3.tscn"
+level_dependencies = [ 0 ]
+
+[node name="Map_Level4" parent="Levels" instance=ExtResource( 2 )]
+position = Vector2( 678.079, 281.274 )
+level_name = "Level4"
+level_path = "res://scenes/levels/Level3.tscn"
+level_dependencies = [ 1, 2 ]
+
+[node name="Map_Level5" parent="Levels" instance=ExtResource( 2 )]
+position = Vector2( 765.555, 282.441 )
+level_name = "Level5"
+level_path = "res://scenes/levels/Level3.tscn"
+level_dependencies = [ 3 ]
 
 [node name="LevelDialog" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -76,8 +98,8 @@ rotate = false
 
 [node name="CharacterSprite" type="Sprite" parent="WorldMapPath/Path2D/PathFollow2D"]
 texture = ExtResource( 4 )
-vframes = 5
-hframes = 8
+vframes = 6
+hframes = 10
 
 [node name="Area2D" type="Area2D" parent="WorldMapPath/Path2D/PathFollow2D"]
 
