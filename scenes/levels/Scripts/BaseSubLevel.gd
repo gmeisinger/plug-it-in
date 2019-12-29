@@ -3,13 +3,6 @@ class_name BaseSubLevel
 
 export(int) var sub_level_index
 
-# overwrite this in inherited classes to use different player controllers
-onready var player = preload("res://Scenes/Player/Player.tscn")
-
-func setup():
-	player.instance()
-	add_child(player)
-
 func set_sublevel_complete():
 	SaveSystem.data.sublevels[sub_level_index] = true
 	on_sublevel_quit()
