@@ -54,7 +54,6 @@ TODO: replace the follow path with a physics or code based movement implementati
 [node name="Map_Level" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 468.996, 441.985 )
 level_path = "res://scenes/levels/Level1.tscn"
-level_dependencies = [  ]
 
 [node name="Map_Level2" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 532.838, 360.954 )
