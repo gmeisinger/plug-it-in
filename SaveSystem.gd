@@ -1,5 +1,7 @@
 extends Node
 
+# This autoload singleton provides global access to a PlayerData object.
+
 const SAVE_PATH = 'user://save_data'
 const FILE_TYPE = '.tres' # change to res for binary serialization (vs text)
 
