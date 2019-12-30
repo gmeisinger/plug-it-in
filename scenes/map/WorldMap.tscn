@@ -7,14 +7,14 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 140.349, 317.628, 0, 0, 0, 0, 219.275, 222.453, 0, 0, 0, 0, 278.082, 146.623, 0, 0, 0, 0, 338.437, 68.471 )
+"points": PoolVector2Array( 0, 0, 0, 0, 42.4576, 295.921, 0, 0, 0, 0, 134.215, 295.921, 0, 0, 0, 0, 219.275, 222.453, 0, 0, 0, 0, 278.082, 146.623, 0, 0, 0, 0, 338.437, 68.471 )
 }
 
 [sub_resource type="CircleShape2D" id=2]
 
 [sub_resource type="Animation" id=3]
 resource_name = "MoveThing"
-length = 5.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:unit_offset")
 tracks/0/interp = 1
@@ -22,10 +22,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.3, 5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.7, 3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.2185, 0.5518 ]
+"values": [ 0.0, 0.3435, 0.393992, 0.6176 ]
 }
 
 [node name="WorldMap" type="Node"]
@@ -90,9 +90,9 @@ position = Vector2( -80.9505, -5.21391 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="WorldMapPath/Path2D"]
-position = Vector2( 251.148, 181.354 )
+position = Vector2( 245.156, 189.08 )
 rotation = -0.878467
-offset = 175.631
+offset = 246.064
 rotate = false
 
 [node name="CharacterSprite" type="Sprite" parent="WorldMapPath/Path2D/PathFollow2D"]

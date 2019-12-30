@@ -20,7 +20,8 @@ func _on_Go_pressed():
 	var scene = load(level_to_load)
 	if scene:
 		var si = scene.instance()
-		get_parent().get_parent().add_child(si)
+		# add to root and delete the world map
+		get_tree().get_root().add_child(si)
 		get_parent().queue_free()
 	else:
 		print('something went wrong loading scene')
