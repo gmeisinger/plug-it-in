@@ -6,9 +6,6 @@ class_name BaseLevel
 export(String) var level_name
 export(int) var level_index
 
-# preload all subscenes for a level
-#export(Array, PackedScene) = [preload('SubScene')]
-
 func set_level_complete():
 	SaveSystem.data.levels[level_index] = true
 	SaveSystem.data.last_level = name
