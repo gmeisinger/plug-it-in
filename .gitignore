@@ -1,1 +1,6 @@
-*.import
+# Keep *.import files - They are used to define import settings
+# The .import folder on the other hand has files that will change (regenerate)
+# on every machine that opens the project, and are just related to that machine
+# rathen than project settings.
+.import/
+
