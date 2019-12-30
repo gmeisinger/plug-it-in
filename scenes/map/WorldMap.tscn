@@ -90,7 +90,7 @@ position = Vector2( -80.9505, -5.21391 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="WorldMapPath/Path2D"]
-position = Vector2( 245.156, 189.08 )
+position = Vector2( 245.157, 189.079 )
 rotation = -0.878467
 offset = 246.064
 rotate = false

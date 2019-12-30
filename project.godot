@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Plug It In"
-run/main_scene="res://scenes/levels/area.tscn"
+run/main_scene="res://scenes/UI/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
