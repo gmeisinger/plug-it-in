@@ -13,18 +13,9 @@ func _on_entered_level_dialog_collider(level):
 
 func _on_Go_pressed():
 	animationPlayer.play_backwards("Pop")
-	# remove this yield when we get background loading
-	yield(animationPlayer, "animation_finished") 
-	# TODO: use ResourceInteractiveLoader and use a loading screen
-	# https://docs.godotengine.org/en/3.1/tutorials/io/background_loading.html
-	var scene = load(level_to_load)
-	if scene:
-		var si = scene.instance()
-		# add to root and delete the world map
-		get_tree().get_root().add_child(si)
-		get_parent().queue_free()
-	else:
-		print('something went wrong loading scene')
+	yield(animationPlayer, "animation_finished")
+	SceneLoader.current_scene = get_parent()
+	SceneLoader.load_level(level_to_load)
 
 func _on_Dont_pressed():
 	animationPlayer.play_backwards("Pop")
