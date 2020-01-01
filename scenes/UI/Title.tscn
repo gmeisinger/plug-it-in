@@ -71,9 +71,9 @@ margin_left = -69.0
 margin_top = -51.0
 margin_right = 69.0
 margin_bottom = 51.0
-custom_constants/vseparation = 3
-custom_constants/hseparation = 21
-items = [ "Pick Save Game", null, 0, false, true, 0, 0, null, "", true, "Save 1", null, 1, false, false, 1, 0, null, "", false, "Save 2", null, 1, false, false, 2, 0, null, "", false, "Save 3", null, 1, false, false, 3, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true ]
+size_flags_horizontal = 5
+custom_constants/vseparation = 4
+items = [ "Pick Save Game", null, 0, false, true, -1, 0, null, "", true, "         Save 1", null, 0, false, false, 1, 0, null, "", false, "         Save 2", null, 0, false, false, 2, 0, null, "", false, "         Save 3", null, 0, false, false, 3, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true ]
 
 [node name="CreditsDialog" type="AcceptDialog" parent="."]
 anchor_left = 0.5

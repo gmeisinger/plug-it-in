@@ -17,10 +17,8 @@ func set_levels_completed():
 	var levels = get_node('Levels').get_children()
 	var i: int = 0
 	for lvl in levels:
-		var missing_dependencies = false
 		for i in lvl.level_dependencies:
 			if not SaveSystem.data.levels[i]:
-				missing_dependencies = true
+				lvl.locked = true
 				break
-		lvl.locked = missing_dependencies
 		i += 1

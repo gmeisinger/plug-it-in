@@ -14,7 +14,7 @@ func _on_entered_level_dialog_collider(level):
 func _on_Go_pressed():
 	animationPlayer.play_backwards("Pop")
 	yield(animationPlayer, "animation_finished")
-	SceneLoader.current_scene = get_parent()
+	SceneLoader.current_scene = get_parent() # the WorldMap is destroyed
 	SceneLoader.load_level(level_to_load)
 
 func _on_Dont_pressed():
