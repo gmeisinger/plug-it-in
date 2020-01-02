@@ -12,8 +12,10 @@ var data: PlayerData = PlayerData.new()
 # PUBLIC METHODS
 func load_data(index=data_index):
 	data_index = index
-	data = ResourceLoader.load(SAVE_PATH+str(index)+FILE_TYPE)
-	if not data:
+	var save_path = SAVE_PATH+str(index)+FILE_TYPE
+	if ResourceLoader.exists(save_path):
+		data = ResourceLoader.load(save_path)
+	else:
 		data = PlayerData.new()
 		save_data()
 
