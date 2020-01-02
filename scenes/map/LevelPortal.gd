@@ -1,6 +1,6 @@
 extends Node2D
 
-# LevelPortal is an area collider for a pop up menu to start a level
+# LevelPortal is an area collider for the LevelDialog to start a level
 
 # LevelPortal depends on LevelDialog in WorldMap
 onready var level_dialog = get_node("../../LevelDialog")

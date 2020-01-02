@@ -1,11 +1,7 @@
 extends Node
 
-# Loading game creates world map - you always load into world map
-# at last_level, and loading level, reloads to last position (or restart level option)
-# Loading game from title, creates this node and sets data_index based on 'save game' selected
-
-# Right now an Area collides with areas defined in scene graph WorldMap::Levels
-# Area is in WorldMapPath. The collider for level dialog pop up is in levels.
+# This node sets up the LevelPortals
+# Dependent on SaveSystem.data having been loaded
 
 func _enter_tree():
 	set_levels_completed()
