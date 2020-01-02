@@ -38,9 +38,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://Globals.gd"
-SaveSystem="*res://SaveSystem.gd"
-SceneLoader="*res://scenes/sceneLoader/SceneLoader.tscn"
+Globals="*res://scenes/autoloads/Globals.gd"
+SaveSystem="*res://scenes/autoloads/SaveSystem.gd"
+SceneLoader="*res://scenes/autoloads/SceneLoader/SceneLoader.tscn"
 
 [display]
 

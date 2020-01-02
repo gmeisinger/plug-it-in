@@ -10,8 +10,9 @@ var data_index = 1
 var data: PlayerData = PlayerData.new()
 
 # PUBLIC METHODS
-func load_data():
-	data = ResourceLoader.load(SAVE_PATH+str(data_index)+FILE_TYPE)
+func load_data(index=data_index):
+	data_index = index
+	data = ResourceLoader.load(SAVE_PATH+str(index)+FILE_TYPE)
 	if not data:
 		data = PlayerData.new()
 		save_data()

@@ -8,9 +8,6 @@ extends Node
 # Area is in WorldMapPath. The collider for level dialog pop up is in levels.
 
 func _enter_tree():
-	# selecting save game at title sets SaveSystem.data_index
-	# load that data now
-	SaveSystem.load_data()
 	set_levels_completed()
 
 func set_levels_completed():

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/map/WorldMap.gd" type="Script" id=1]
-[ext_resource path="res://scenes/map/MapLevel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://guy.png" type="Texture" id=3]
+[ext_resource path="res://scenes/map/LevelPortal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/guy.png" type="Texture" id=3]
 [ext_resource path="res://scenes/map/LevelDialog.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
@@ -51,29 +51,29 @@ TODO: replace the follow path with a physics or code based movement implementati
 
 [node name="Levels" type="Node" parent="."]
 
-[node name="Map_Level" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 468.996, 441.985 )
 level_path = "res://scenes/levels/area.tscn"
 
-[node name="Map_Level2" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal2" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 532.838, 360.954 )
 level_name = "Level2"
 level_path = "res://scenes/levels/Level2.tscn"
 level_dependencies = [ 0 ]
 
-[node name="Map_Level3" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal3" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 591.769, 283.607 )
 level_name = "Level3"
 level_path = "res://scenes/levels/Level3.tscn"
 level_dependencies = [ 0 ]
 
-[node name="Map_Level4" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal4" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 678.079, 281.274 )
 level_name = "Level4"
 level_path = "res://scenes/levels/Level3.tscn"
 level_dependencies = [ 1, 2 ]
 
-[node name="Map_Level5" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal5" parent="Levels" instance=ExtResource( 2 )]
 position = Vector2( 765.555, 282.441 )
 level_name = "Level5"
 level_path = "res://scenes/levels/Level3.tscn"

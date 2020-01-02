@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/map/MapLevel.gd" type="Script" id=1]
+[ext_resource path="res://scenes/map/LevelPortal.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/no_sign.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 28.2375
 
-[node name="Map_Level" type="Node2D"]
+[node name="LevelPortal" type="Node2D"]
 script = ExtResource( 1 )
 level_name = "Level1"
 level_dependencies = [  ]

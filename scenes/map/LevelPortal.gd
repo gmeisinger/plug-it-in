@@ -1,11 +1,11 @@
 extends Node2D
 
-# MapLevel is an area collider for a pop up menu to start a level
+# LevelPortal is an area collider for a pop up menu to start a level
 
-# MapLevel depends on LevelDialog in WorldMap
+# LevelPortal depends on LevelDialog in WorldMap
 onready var level_dialog = get_node("../../LevelDialog")
 
-# set in inspector per MapLevel.tscn instance
+# set in inspector per LevelPortal.tscn instance
 export (String) var level_name # for display/ui purposes only
 export (String, FILE, "*.tscn,*.scn") var level_path
 export (Array, int) var level_dependencies = [0]

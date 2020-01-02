@@ -1,9 +1,10 @@
 extends Node
 
-# Autoload singleton manages loading larger game scenes
+# Autoload singleton manages loading larger game scenes with a progress bar
 # (WorldMap, Levels, SubLevels?)
-# To test it out put some large images (10MB+) as sprites in a level
+# To test it out put some large images (10MB+) as sprites in levels/<tscn>
 # then load it from the world map
+# with enough load stages you'll see a progress bar
 
 onready var _ui : Control = $"Control"
 onready var _progress_bar : ProgressBar = $"Control/ProgressBar"
@@ -12,16 +13,16 @@ const TIME_MAX = 100
 
 var _wait_frames: int
 var _loader : ResourceInteractiveLoader
-var current_scene : Node
+var _current_scene : Node
 
 func _ready():
 	_ui.hide()
 
-func load_level(level_to_load):
-	_loader = ResourceLoader.load_interactive(level_to_load)
+func load_scene(scene_path):
+	_loader = ResourceLoader.load_interactive(scene_path)
 	set_process(true)
 	_ui.show()
-	current_scene.queue_free()
+	_current_scene.queue_free()
 	_wait_frames = 1
 
 func _process(delta):
@@ -53,8 +54,8 @@ func _update_progress():
 func _set_new_scene(scene_resource):
 	_progress_bar.set_value(0)
 	_ui.hide()
-	current_scene = scene_resource.instance()
-	get_node("/root").add_child(current_scene)
+	_current_scene = scene_resource.instance()
+	get_node("/root").add_child(_current_scene)
 
 func _show_error():
 	print('Dang... something went wrong!')

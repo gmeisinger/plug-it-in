@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
-[ext_resource path="res://guy.png" type="Texture" id=2]
+[ext_resource path="res://assets/guy.png" type="Texture" id=2]
 [ext_resource path="res://scenes/stateMachine/stateMachine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/player/states/player_state_moving.gd" type="Script" id=4]
 [ext_resource path="res://scenes/player/states/player_state_jumping.gd" type="Script" id=5]
