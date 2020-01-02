@@ -7,7 +7,6 @@ var level_path # set by LevelPortal in pop_up
 
 # LevelPortal calls to pop up this node
 func pop_up(level):
-	show()
 	animationPlayer.play("Pop")
 	level_path = level
 
@@ -19,4 +18,3 @@ func _on_Go_pressed():
 func _on_Dont_pressed():
 	animationPlayer.play_backwards("Pop")
 	yield(animationPlayer, "animation_finished")
-	hide()
