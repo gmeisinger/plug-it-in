@@ -17,4 +17,3 @@ func _on_Go_pressed():
 
 func _on_Dont_pressed():
 	animationPlayer.play_backwards("Pop")
-	yield(animationPlayer, "animation_finished")
