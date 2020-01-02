@@ -16,10 +16,10 @@ var locked: bool = false
 func _ready():
 	if locked: $LockedSprite.show()
 
-func _on_Area2D_area_entered(area):
+func _on_LevelPortal_area_entered(area):
 	if locked: return
-	level_dialog._on_entered_level_dialog_collider(level_path)
+	level_dialog.pop_up(level_path)
 
-func _on_Area2D_area_exited(area):
+func _on_LevelPortal_area_exited(area):
 	if locked: return
 	level_dialog._on_Dont_pressed()

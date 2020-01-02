@@ -3,10 +3,10 @@ extends Control
 # 2 buttons: go and don't -- But maybe should have continue/restart if you quit mid level
 
 onready var animationPlayer = $AnimationPlayer
-var level_path # set by LevelPortal in _on_entered_level_dialog_collider
+var level_path # set by LevelPortal in pop_up
 
 # LevelPortal calls to pop up this node
-func _on_entered_level_dialog_collider(level):
+func pop_up(level):
 	show()
 	animationPlayer.play("Pop")
 	level_path = level
