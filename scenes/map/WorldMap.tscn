@@ -35,45 +35,45 @@ script = ExtResource( 1 )
 margin_right = 875.0
 margin_bottom = 150.0
 text = "These are basically gates you unlock by progressing through the game.
-The levels, signified by the icons, will have crosses or fog over them if you haven't unlocked them.
-When the player collides with the level they are offered a pop up.
-'walk away pops down the ui
+The LevelPortals, signified by the icons, will have crosses or fog over them if you haven't unlocked them.
+When the player collides with a LevelPortal they are offered a pop up -- the LevelDialog.
+'walk away' pops down this ui
 
 NOTES: PlayerData is saved in tscn format. You can edit this by going to ~/.local/share/godot/app_userdata/<project name>.
 Go there and set the the first bool of levels array to true to unlock level2, and 3.
 Level 4 requires level 2 and 3 (index 1,2) to be true in the list.
 
-See the Map_Levels for setting level dependencies
+See the LevelPortals for setting level dependencies
 
 TODO: replace the follow path with a physics or code based movement implementation."
 
 [node name="SpriteMap" type="Sprite" parent="."]
 
-[node name="Levels" type="Node" parent="."]
+[node name="LevelPortals" type="Node" parent="."]
 
-[node name="LevelPortal" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal" parent="LevelPortals" instance=ExtResource( 2 )]
 position = Vector2( 468.996, 441.985 )
 level_path = "res://scenes/levels/area.tscn"
 
-[node name="LevelPortal2" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal2" parent="LevelPortals" instance=ExtResource( 2 )]
 position = Vector2( 532.838, 360.954 )
 level_name = "Level2"
 level_path = "res://scenes/levels/Level2.tscn"
 level_dependencies = [ 0 ]
 
-[node name="LevelPortal3" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal3" parent="LevelPortals" instance=ExtResource( 2 )]
 position = Vector2( 591.769, 283.607 )
 level_name = "Level3"
 level_path = "res://scenes/levels/Level3.tscn"
 level_dependencies = [ 0 ]
 
-[node name="LevelPortal4" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal4" parent="LevelPortals" instance=ExtResource( 2 )]
 position = Vector2( 678.079, 281.274 )
 level_name = "Level4"
 level_path = "res://scenes/levels/Level3.tscn"
 level_dependencies = [ 1, 2 ]
 
-[node name="LevelPortal5" parent="Levels" instance=ExtResource( 2 )]
+[node name="LevelPortal5" parent="LevelPortals" instance=ExtResource( 2 )]
 position = Vector2( 765.555, 282.441 )
 level_name = "Level5"
 level_path = "res://scenes/levels/Level3.tscn"

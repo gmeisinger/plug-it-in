@@ -11,11 +11,9 @@ func _enter_tree():
 	set_levels_completed()
 
 func set_levels_completed():
-	var levels = get_node('Levels').get_children()
-	var i: int = 0
-	for lvl in levels:
-		for i in lvl.level_dependencies:
-			if not SaveSystem.data.levels[i]:
-				lvl.locked = true
+	var level_portals = get_node('LevelPortals').get_children()
+	for portal in level_portals:
+		for dependency_index in portal.level_dependencies:
+			if not SaveSystem.data.levels[dependency_index]:
+				portal.locked = true
 				break
-		i += 1
