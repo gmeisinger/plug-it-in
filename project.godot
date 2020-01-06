@@ -8,16 +8,39 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseLevel",
+"language": "GDScript",
+"path": "res://scenes/levels/Scripts/BaseLevel.gd"
+}, {
+"base": "Node2D",
+"class": "BaseSubLevel",
+"language": "GDScript",
+"path": "res://scenes/levels/Scripts/BaseSubLevel.gd"
+}, {
+"base": "Resource",
+"class": "PlayerData",
+"language": "GDScript",
+"path": "res://scenes/player/PlayerData.gd"
+} ]
 _global_script_class_icons={
-
+"BaseLevel": "",
+"BaseSubLevel": "",
+"PlayerData": ""
 }
 
 [application]
 
 config/name="Plug It In"
-run/main_scene="res://scenes/levels/area.tscn"
+run/main_scene="res://scenes/UI/Title.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveSystem="*res://scenes/autoloads/SaveSystem.gd"
+SceneLoader="*res://scenes/autoloads/SceneLoader/SceneLoader.tscn"
+PauseMenu="*res://scenes/UI/PauseMenu.tscn"
 
 [display]
 

@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 448.421
+margin_top = 282.105
+margin_right = 629.421
+margin_bottom = 296.105
+text = "THIS IS LEVEL 2 FOR NOW... "

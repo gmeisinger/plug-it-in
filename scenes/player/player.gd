@@ -40,3 +40,15 @@ func apply_friction(delta):
 func play_anim(anim_name, speed : float = 1.0):
 	if $AnimationPlayer.current_animation != anim_name:
 		$AnimationPlayer.play(anim_name, -1, speed)
+
+
+# These methods were in my player script and relate to the save system
+# func _respawn():
+# 	health = 100
+# 	position = SaveSystem.data.last_pos
+# 
+# # TODO: colliders in levels can/should set this - it could be a method there
+# # It needs not connection to the player
+# func _set_last_pos():
+# 	SaveSystem.data.last_pos = position
+
