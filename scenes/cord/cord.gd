@@ -20,8 +20,8 @@ func build_cord():
 		add_joint(parent, child)
 		parent = child
 		# hide the last segment - looks better. Comment out to see difference
-		#if i == LENGTH-1:
-			#child.get_node('Sprite').hide()
+		if i == LENGTH-1:
+			child.get_node('Sprite').hide()
 	emit_signal("cord_ready")
 
 func add_segment(parent):
@@ -42,6 +42,6 @@ func add_joint(parent, child):
 
 # adds and instanced object to the end of rope
 func attach_object(obj):
-	add_joint(final_segment, obj)
 	obj.position = final_segment.position + final_segment.get_end()
 	add_child(obj)
+	add_joint(final_segment, obj)

@@ -15,3 +15,6 @@ func update(delta):
 	var fall_distance = host.global_position.y - fall_start_position.y
 	host.process_horizontal_movement(delta)
 	host.process_move_and_slide(delta)
+	# quick, dirty, ugly stuff
+	if host.position.y > 650.0:
+		host.position.y = -50.0

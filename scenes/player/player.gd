@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var velocity : Vector2
-var walk_speed = 50.0
-var max_walk_speed = 300.0
+var walk_speed = 30.0
+var max_walk_speed = 200.0
 var jump_speed = 450
 var FRICTION = 700.0
 var floor_normal = Vector2.UP
