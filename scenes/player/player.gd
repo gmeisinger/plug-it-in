@@ -9,6 +9,8 @@ var floor_normal = Vector2.UP
 var gravity_vector = Vector2(0, 900)
 var slope_slide_stop = 25.0
 
+export (int, 0, 200) var push = 100
+
 # Movement
 func process_horizontal_movement(delta):
 	#check input and set velocity
@@ -25,7 +27,11 @@ func process_horizontal_movement(delta):
 
 func process_move_and_slide(delta):
 	velocity += delta * gravity_vector
-	velocity = move_and_slide(velocity, floor_normal, slope_slide_stop)
+	velocity = move_and_slide(velocity, floor_normal, slope_slide_stop, 4, PI/4, false)
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider is RigidBody2D:
+			collision.collider.apply_central_impulse(-collision.normal * push)
 
 func jump():
 	velocity.y -= jump_speed

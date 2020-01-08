@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.0829, 10 )
+
+[node name="weight" type="RigidBody2D"]
+mass = 10.2041
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.0745098, 0.054902, 0.054902, 1 )
+polygon = PoolVector2Array( -21.1965, -10.2229, 20.9809, -10.2229, 21.2733, 10.0252, -20.9772, 10.0252 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -21.763
+margin_top = -10.2547
+margin_right = 21.237
+margin_bottom = 9.74534
+text = "100lbs"
+align = 1
+valign = 1
